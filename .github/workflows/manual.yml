@@ -15,6 +15,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
-    - name: SSH and pull from repo
-      run: ssh "${{ secrets.ROOT_USER }}@104.248.106.77" && expect "*?assword:*" && send -- ${{ secrets.ROOT_PASSWORD }} && cd /var/www/html && git pull && exit
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.ROOT_USER }}
+        password: ${{ secrets.ROOT_PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: cd /var/www/html && git pull && exit
