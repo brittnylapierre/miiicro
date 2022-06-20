@@ -439,6 +439,7 @@ class MenuManager
 
             $title = '';
             $url = '';
+            $icon = '';
             $is_active = true;
             $url = $item['url']  = trim(  $item['url'] );
 
@@ -563,6 +564,22 @@ class MenuManager
             if (isset($item['title']) and ($item['title']) != false) {
                 $title = $item['title'] = strip_tags(html_entity_decode($item['title']));
             }
+
+            // Todo: some better way?
+            if($title == 'ABOUT') {
+              $icon = '/userfiles/media/default/info-circle.svg';
+            } elseif ($title == 'PORTALS') {
+              $icon = '/userfiles/media/default/layout-text-window-reverse.svg';
+            } elseif ($title == 'CRKN' || $title == 'RCDR') { 
+              $icon = '/userfiles/media/default/x31-25-x2c-canada-x2c-leaf-x2c-maple.svg';
+            } elseif ($title == 'CHANGE LOG') { 
+              $icon = '/userfiles/media/default/journal-code.svg';
+            } elseif ($title == 'CONTACT') {
+              $icon = '/userfiles/media/default/envelope.svg';
+            } elseif ($title == 'TOOLS') {
+              $icon = '/userfiles/media/default/iiif.svg';
+            }
+            $item['icon'] = $icon;
 
             if ($title != '') {
                 $has_items = true;

@@ -1,0 +1,55 @@
+/*Custom Overrides */
+#header_menu {
+  margin-right: 1em !important;
+  margin-left: auto!important;
+}
+.py-2 {
+  display: none;
+}
+#footer-layout * {
+  text-align: left !important;
+}
+.module-posts h4 {
+  line-height: 1.1 !important;
+  height: 2.4em !important;
+  overflow: hidden; 
+}
+.module-posts .slick-arrow {
+  display: none !important;
+}
+.icon-menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.icon-menu-item-icon {
+  height: 36px;
+  margin-bottom:0.25em;
+}
+.nav-link {
+  color: #808183;
+}
+.language-switcher-language-url {
+  margin-right: auto;
+  margin-left: auto;
+}
+.language-switcher-language-url ul {
+  margin-bottom: 0 !important;
+}
+.language-switcher-language-url ul.links li:not(:last-child):after {
+  content: '';
+  width: 2px;
+  height: 12px;
+  background-color: black;
+  display: inline-block;
+  margin-right: 0.3rem;
+  margin-left: 0.3rem;
+  margin-bottom: -0.1rem;
+}
+.language-switcher-language-url ul.links li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
