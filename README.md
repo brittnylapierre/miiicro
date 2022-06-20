@@ -52,9 +52,6 @@ You can add dynamic pages, posts, and products. All of these can be organized in
 The main focus of Microweber CMS is E-commerce. A rising number of people have grown fond of the idea of online entrepreneurship and we aspire to cover their needs. The software has some built-in features that will help online shop founders see their business grow and excel.
 
 
-![Give a star to Microweber](https://microweber.com/cdn/2019_version/Star-Microweber.gif "")
-
-
 
 ###  Requirements  
 
@@ -128,3 +125,5 @@ Another way is to first clone the repository and then run `composer install` in 
 ### Developer Guide
 
 See the [online guides](http://microweber.com/docs/guides/README.md) for developers.
+
+![Give a star to Microweber](https://microweber.com/cdn/2019_version/Star-Microweber.gif "")
