@@ -32,13 +32,13 @@
 
     <script src="https://kit.fontawesome.com/ef315291c4.js" crossorigin="anonymous"></script>
 
-    <link href="<?php print template_url(); ?>assets/css/custom.css" rel="stylesheet"/>
-
     <?php include('template_settings.php'); ?>
 
     <link href="<?php print template_url(); ?>assets/css/bootstrap.css" rel="stylesheet"/>
 
     <link href="<?php print template_url(); ?>assets/css/main.css" rel="stylesheet"/>
+
+    <link href="<?php print template_url(); ?>assets/css/custom.css" rel="stylesheet"/>
 </head>
 <!--<body class="--><?php //print helper_body_classes(); ?><!-- --><?php //print $sticky_navigation; ?><!-- ">-->
 
