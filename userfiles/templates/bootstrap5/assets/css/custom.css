@@ -54,6 +54,6 @@
   display: inline-block;
 }
 
-#module-layouts-1--4-posts > div > div > div > div > div {
+.blog-posts-1 .border {
   min-height: 632px;
 }
