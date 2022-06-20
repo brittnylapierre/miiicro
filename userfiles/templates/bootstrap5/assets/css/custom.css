@@ -53,3 +53,7 @@
   margin: 0;
   display: inline-block;
 }
+
+#module-layouts-1--4-posts > div > div > div > div > div {
+  min-height: 632px;
+}
