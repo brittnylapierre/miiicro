@@ -2,7 +2,7 @@
 
 Currently under development.
 
-An instance of the Microweber drag and drop CMS that includes IIIF modules.
+An instance of the [Microweber](https://github.com/microweber/microweber) drag and drop CMS that includes IIIF modules.
 
 
 
