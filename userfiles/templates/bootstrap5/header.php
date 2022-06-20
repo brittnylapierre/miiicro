@@ -26,17 +26,19 @@
             .addIconSet('materialDesignIcons')
     </script>
 
-    <link href="<?php print template_url(); ?>assets/css/bootstrap.css" rel="stylesheet"/>
-
-    <link href="<?php print template_url(); ?>assets/css/main.css" rel="stylesheet"/>
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
+    <script src="https://kit.fontawesome.com/ef315291c4.js" crossorigin="anonymous"></script>
+
     <link href="<?php print template_url(); ?>assets/css/custom.css" rel="stylesheet"/>
 
     <?php include('template_settings.php'); ?>
+
+    <link href="<?php print template_url(); ?>assets/css/bootstrap.css" rel="stylesheet"/>
+
+    <link href="<?php print template_url(); ?>assets/css/main.css" rel="stylesheet"/>
 </head>
 <!--<body class="--><?php //print helper_body_classes(); ?><!-- --><?php //print $sticky_navigation; ?><!-- ">-->
 
