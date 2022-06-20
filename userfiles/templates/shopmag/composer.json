@@ -1,0 +1,22 @@
+{
+  "name": "microweber-templates/shopmag",
+  "type": "microweber-template",
+  "description": "Shopmag",
+  "keywords": [
+    "microweber",
+    "ecommerce",
+    "bootstrap"
+  ],
+  "homepage": "https://microweber.com/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "MW Team",
+      "email": "contacts@microweber.com"
+    }
+  ],
+  "extra": {
+    "preview_url": "https://templates.microweber.com/shopmag/"
+  },
+  "target-dir": "shopmag"
+}

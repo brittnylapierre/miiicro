@@ -1,0 +1,4 @@
+Preparing to install
+Saving config
+Adding admin user
+Saving ready config

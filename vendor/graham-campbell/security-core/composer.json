@@ -1,0 +1,35 @@
+{
+    "name": "graham-campbell/security-core",
+    "description": "Security Core Is A Wrapper Of voku/anti-xss For General Use",
+    "keywords": ["laravel", "framework", "security", "xss", "anti-xss", "Security", "Security Core", "Security-Core", "Graham Campbell", "GrahamCampbell"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Graham Campbell",
+            "email": "hello@gjcampbell.co.uk",
+            "homepage": "https://github.com/GrahamCampbell"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5 || ^8.0",
+        "voku/anti-xss": "~4.1.33",
+        "voku/portable-utf8": "^5.4.51 || ^6.0"
+    },
+    "require-dev": {
+        "graham-campbell/analyzer": "^3.0",
+        "phpunit/phpunit": "^8.5.8 || ^9.3.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "GrahamCampbell\\SecurityCore\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GrahamCampbell\\Tests\\SecurityCore\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}

@@ -1,0 +1,304 @@
+<?php
+define("INI_SYSTEM_CHECK_DISABLED", ini_get('disable_functions'));
+
+if (!strstr(INI_SYSTEM_CHECK_DISABLED, 'ini_set')) {
+    ini_set("memory_limit", "160M");
+    ini_set("set_time_limit", 0);
+}
+
+if (!strstr(INI_SYSTEM_CHECK_DISABLED, 'date_default_timezone_set')) {
+    date_default_timezone_set('America/Los_Angeles');
+}
+
+include_once 'Unzip.php';
+
+class StandaloneUpdateExecutor
+{
+    public function getLogfile()
+    {
+        return $this->getInstallSessionId() . 'log.txt';
+    }
+
+    public function log($log)
+    {
+        @file_put_contents($this->getLogfile(), $log . PHP_EOL);
+    }
+
+    public function getInstallSessionId()
+    {
+        return $_COOKIE['install_session_id'];
+    }
+
+    public function startSession()
+    {
+        if (!isset($_COOKIE['install_session_id'])) {
+            setcookie('install_session_id', rand(2222,4444), time() + (1800), "/");
+            $this->log('Starting the installation session..');
+        }
+    }
+
+    public function setInstallVersion($version = 'latest')
+    {
+        setcookie('install_session_version', $version, time() + (1800), "/");
+    }
+
+    public function isStarted()
+    {
+        if (!isset($_COOKIE['install_session_id'])) {
+            return false;
+        }
+        return true;
+    }
+
+    public function latestVersion() {
+
+       $latestMasterVersionZip = 'http://updater.microweberapi.com/microweber-master.zip';
+
+       return ['url'=>$latestMasterVersionZip];
+    }
+
+    public function latestDevVersion() {
+
+        $latestDevVersionZip = 'http://updater.microweberapi.com/microweber-dev.zip';
+
+        return ['url'=>$latestDevVersionZip];
+    }
+
+    public function startUpdating()
+    {
+        $version = 'latest';
+
+        if (isset($_COOKIE['install_session_version'])  && $_COOKIE['install_session_version'] == 'dev') {
+            $version = 'developer';
+            $installVersion = $this->latestDevVersion();
+        } else {
+            $installVersion = $this->latestVersion();
+            if (!$installVersion['url']) {
+                echo "Can't update the version now.";
+                return;
+            }
+        }
+
+        $this->log('Downloading '.$version.' version of system.');
+
+        $zipFile = time() . 'mw-app.zip';
+
+        $downloadStatus = $this->downloadFile($installVersion['url'], $zipFile);
+
+        if ($downloadStatus) {
+            $this->log('The '.$version.' version of the system has been downloaded successfully!');
+        }
+ 
+        $this->log('Unzipping '.$version.' version files...');
+
+        $unzip = new Unzip();
+        $unzip->extract(__DIR__ . DIRECTORY_SEPARATOR . $zipFile, __DIR__ . DIRECTORY_SEPARATOR . 'mw-app-unziped/', true);
+
+        $this->log('Replacing with the new files...');
+
+        $replace = new StandaloneUpdateReplacer();
+        $replace->start();
+
+        $message = 'You are up to date!';
+
+        /*
+        if (!empty($_COOKIE['site_url'])) {
+            $siteUrl = $_COOKIE['site_url'];
+            $message .= '<br /><a href="'.$siteUrl.'">Visit your website</a>';
+        }*/
+
+        if (!empty($_COOKIE['admin_url'])) {
+            $adminUrl = $_COOKIE['admin_url'];
+            $message .= '<br /><a href="'.$adminUrl.'" class="btn btn-link" style="color:#fff">Back to admin</a>';
+        }
+
+        $this->log(json_encode(['success'=>true, 'message'=>$message]));
+    }
+
+    public function downloadFile($url, $dest)
+    {
+        set_time_limit(0);
+        $logFile = $this->getLogfile();
+        $options = array(
+            CURLOPT_FILE => is_resource($dest) ? $dest : fopen($dest, 'w'),
+            CURLOPT_TIMEOUT => 600,
+            CURLOPT_MAX_RECV_SPEED_LARGE => $speedLimit,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_VERBOSE => true,
+            CURLINFO_HEADER_OUT => true,
+            CURLOPT_URL => $url,
+            CURLOPT_FAILONERROR => true, // HTTP code > 400 will throw curl error
+        );
+
+        if (isset($_COOKIE['max_receive_speed_download']) && $_COOKIE['max_receive_speed_download'] > 0) {
+            $speedLimit = (intval($_COOKIE['max_receive_speed_download']) * 1024 * 1024);
+            $options[CURLOPT_MAX_RECV_SPEED_LARGE] = $speedLimit;
+        }
+
+        if ($logFile) {
+            $options[CURLOPT_STDERR] = fopen($logFile, 'a+');
+            $options[CURLOPT_WRITEHEADER] = fopen($logFile, 'a+');
+        }
+
+        $ch = curl_init();
+
+        curl_setopt_array($ch, $options);
+
+        $return = curl_exec($ch);
+
+        if ($return === false) {
+            return curl_error($ch);
+        } else {
+            return true;
+        }
+    }
+}
+
+if (isset($_GET['format']) && $_GET['format'] == "json") {
+
+    $json = [];
+    header('Content-Type: application/json');
+
+    if (isset($_GET['startSession']) && $_GET['startSession'] == 1) {
+        $update = new StandaloneUpdateExecutor();
+        $update->setInstallVersion($_GET['installVersion']);
+        $json['start'] = $update->startSession();
+    }
+
+    if (isset($_GET['startUpdating']) && $_GET['startUpdating'] == 1) {
+        $update = new StandaloneUpdateExecutor();
+        $json['updating'] = $update->startUpdating();
+    }
+
+    if (isset($_GET['isStarted']) && $_GET['isStarted'] == 1) {
+        $update = new StandaloneUpdateExecutor();
+        $json['started'] = $update->isStarted();
+    }
+
+    if (isset($_GET['getLogfile']) && $_GET['getLogfile'] == 1) {
+        $update = new StandaloneUpdateExecutor();
+        $json['logfile'] = $update->getLogfile();
+    }
+
+    die(json_encode($json));
+}
+
+class StandaloneUpdateReplacer
+{
+    public $microweberPath;
+    public $newMicroweberPath;
+
+    public function __construct()
+    {
+        $this->microweberPath = dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR;
+        $this->newMicroweberPath = __DIR__ . DIRECTORY_SEPARATOR . 'mw-app-unziped';
+    }
+
+    public function start()
+    {
+        $this->deleteDirectoryRecursive($this->microweberPath . 'vendor');
+        $this->deleteDirectoryRecursive($this->microweberPath . 'bootstrap ' . DIRECTORY_SEPARATOR . 'cache');
+        $this->deleteDirectoryRecursive($this->microweberPath . 'storage' . DIRECTORY_SEPARATOR . 'framework' . DIRECTORY_SEPARATOR . 'cache');
+        $this->deleteDirectoryRecursive($this->microweberPath . 'storage' . DIRECTORY_SEPARATOR . 'framework' . DIRECTORY_SEPARATOR . 'views');
+        $this->deleteDirectoryRecursive($this->microweberPath . 'userfiles' . DIRECTORY_SEPARATOR . 'cache');
+        $this->deleteDirectoryRecursive($this->microweberPath . 'userfiles' . DIRECTORY_SEPARATOR . 'css' . DIRECTORY_SEPARATOR . 'admin-css');
+
+        $newFilesForCopy = [];
+        $newFilesForCopy = array_merge($newFilesForCopy, $this->getFilesFromPath( $this->newMicroweberPath . DIRECTORY_SEPARATOR . 'userfiles'.DIRECTORY_SEPARATOR.'templates'));
+        $newFilesForCopy = array_merge($newFilesForCopy, $this->getFilesFromPath( $this->newMicroweberPath . DIRECTORY_SEPARATOR . 'userfiles'.DIRECTORY_SEPARATOR.'modules'));
+        $newFilesForCopy = array_merge($newFilesForCopy, $this->getFilesFromPath( $this->newMicroweberPath . DIRECTORY_SEPARATOR . 'userfiles'.DIRECTORY_SEPARATOR.'elements'));
+        $newFilesForCopy = array_merge($newFilesForCopy, $this->getFilesFromPath( $this->newMicroweberPath . DIRECTORY_SEPARATOR . 'src'));
+        $newFilesForCopy = array_merge($newFilesForCopy, $this->getFilesFromPath( $this->newMicroweberPath . DIRECTORY_SEPARATOR . 'vendor'));
+
+        $newFilesForCopy[] = ['realPath'=>$this->newMicroweberPath . DIRECTORY_SEPARATOR . 'composer.lock','targetPath'=>'composer.lock'];
+        $newFilesForCopy[] = ['realPath'=>$this->newMicroweberPath . DIRECTORY_SEPARATOR . 'composer.json','targetPath'=>'composer.json'];
+
+        $newFilesForCopy[] = ['realPath'=>$this->newMicroweberPath . DIRECTORY_SEPARATOR . 'ABOUT.md','targetPath'=>'ABOUT.md'];
+        $newFilesForCopy[] = ['realPath'=>$this->newMicroweberPath . DIRECTORY_SEPARATOR . 'README.md','targetPath'=>'README.md'];
+        $newFilesForCopy[] = ['realPath'=>$this->newMicroweberPath . DIRECTORY_SEPARATOR . 'CHANGELOG.md','targetPath'=>'CHANGELOG.md'];
+
+        foreach($newFilesForCopy as $newFile) {
+
+            $newFileFolder = dirname($this->microweberPath . $newFile['targetPath']);
+            if (!is_dir($newFileFolder)) {
+                mkdir_recursive($newFileFolder);
+            }
+
+            if (is_file($this->microweberPath . $newFile['targetPath'])) {
+                if ($this->filesAreEqual($newFile['realPath'],$this->microweberPath . $newFile['targetPath'])) {
+                    continue;
+                }
+            }
+
+            if (is_file($this->microweberPath . $newFile['targetPath'])) {
+                @unlink($this->microweberPath . $newFile['targetPath']);
+            }
+
+            /*
+            $standaloneUpdater = new StandaloneUpdateExecutor();
+            $standaloneUpdater->log('adding new files ' . filename($newFile['realPath']));
+            */
+
+            copy($newFile['realPath'], $this->microweberPath . $newFile['targetPath']);
+
+        }
+
+        /*
+        $this->log('Delete cache folders..');
+        $this->deleteDirectoryRecursive($this->newMicroweberPath);
+        */
+    }
+
+    public function filesAreEqual($a, $b)
+    {
+        $a = file_get_contents($a);
+        $b = file_get_contents($b);
+
+        $a = preg_replace('/\s+/', '', $a);
+        $b = preg_replace('/\s+/', '', $b);
+
+        $a = trim($a);
+        $b = trim($b);
+
+        if ($a == $b) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function deleteDirectoryRecursive($path)
+    {
+        if (!is_dir($path)) {
+            return;
+        }
+
+        $files = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path, \RecursiveDirectoryIterator::SKIP_DOTS), \RecursiveIteratorIterator::CHILD_FIRST);
+
+        foreach ($files as $fileinfo) {
+            $todo = ($fileinfo->isDir() ? 'rmdir' : 'unlink');
+            @$todo($fileinfo->getRealPath());
+        }
+
+        @rmdir($path);
+    }
+
+    public function getFilesFromPath($path)
+    {
+        $filesMap = [];
+        $files = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path, \RecursiveDirectoryIterator::SKIP_DOTS), \RecursiveIteratorIterator::CHILD_FIRST);
+        foreach ($files as $fileinfo) {
+            if (!$fileinfo->isDir()) {
+
+                $targetPath = $fileinfo->getRealPath();
+                $targetPath = str_replace($this->newMicroweberPath,'', $targetPath);
+
+                $filesMap[] = ['realPath'=>$fileinfo->getRealPath(),'targetPath'=>$targetPath];
+            }
+        }
+        return $filesMap;
+    }
+}
+/*
+$replace = new StandaloneUpdateReplacer();
+$replace->start();*/

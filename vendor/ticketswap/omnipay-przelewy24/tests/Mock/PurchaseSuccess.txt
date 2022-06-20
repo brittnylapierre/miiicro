@@ -1,0 +1,10 @@
+HTTP/1.1 201 Created
+Server: nginx/1.4.4
+Date: Thu, 3 Mar 2016 13:56:55 GMT
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 198
+Connection: keep-alive
+Cache-Control: no-cache, no-store
+X-Request-Id: 53e398c2-1c9a-4e8b-a3a7-9dcf3cad90b1
+
+error=0&token=3F17389551-5285CA-F0B10D-A700D9B023

@@ -1,0 +1,28 @@
+{
+  "name": "microweber-templates/bootstrap5",
+  "type": "microweber-template",
+  "description": "Bootstrap 5 template",
+  "keywords": [
+    "microweber",
+    "ecommerce",
+    "bootstrap",
+    "default"
+  ],
+  "homepage": "https://microweber.com/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "MW Team",
+      "email": "contacts@microweber.com"
+    }
+  ],
+  "support": {
+    "email": "support@microweber.com",
+    "forum": "https://microweber.org/community",
+    "docs": "http://docs.microweber.org"
+  },
+  "extra": {
+    "preview_url": "https://templates.microweber.com/bootstrap5/"
+  },
+  "target-dir": "bootstrap5"
+}

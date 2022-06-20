@@ -1,0 +1,43 @@
+{
+    "name": "mtrajano/laravel-swagger",
+    "description": "Auto generates the swagger documentation for a laravel project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mauricio Trajano",
+            "email": "mauriciot1993@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "php": ">=7.0",
+        "orchestra/testbench": "~4.0",
+        "phpunit/phpunit": "^8.0|^9.0",
+        "laravel/passport": "^8.0"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "Mtrajano\\LaravelSwagger\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mtrajano\\LaravelSwagger\\Tests\\": "tests/"
+        }
+    },
+    "suggest": {
+        "ext-yaml": "Required to use the YAML output option"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mtrajano\\LaravelSwagger\\SwaggerServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "phpdocumentor/reflection-docblock": "^4.3|^5.2"
+    }
+}

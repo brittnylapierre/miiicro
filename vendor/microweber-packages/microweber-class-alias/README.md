@@ -1,0 +1,1 @@
+# microweber-class-alias
