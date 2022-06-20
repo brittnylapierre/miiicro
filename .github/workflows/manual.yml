@@ -21,5 +21,4 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.ROOT_USER }}
         password: ${{ secrets.ROOT_PASSWORD }}
-        port: ${{ secrets.PORT }}
         script: cd /var/www/html && git pull && exit
