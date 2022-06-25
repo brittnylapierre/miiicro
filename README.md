@@ -52,6 +52,7 @@ IIIF Presentation API url = ""
 Get id from: query string 'manifesr_id' param OR enter manually (shows input)
 
 Description:
+    
 On load
 <script>
     universal viewer inititalization (pho print <Presentation API URL>/<manifest id>/manifest
@@ -72,6 +73,7 @@ Paginate?
 
     
 Description:
+    
 Will draw the manually entered collections in the selected layout
     
 ## IIIF Collection Preview Module
@@ -87,6 +89,7 @@ Paginate?
 
     
 Description:
+    
 Will draw the manually entered manifests from the collection in the selected layout
     
 
@@ -101,6 +104,7 @@ included feilds = metadata keynames to include - all OR list
 
     
 Description:
+    
 Will draw the metadata feilds for the item in a table
   
 
@@ -114,11 +118,14 @@ item id
 
     
 Description:
+    
 Will draw citations in common citation formats for the item
 
 ## Others    
 Clover viewer works exactly like universal viewer module
+    
 Mirador and annotation will work as stand alone allowing users to enter manifest urls
+    
 CMS: Digirati Manifest editor -> save json to system -> other modules can access json for manifests
     
 
