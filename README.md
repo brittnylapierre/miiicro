@@ -129,9 +129,8 @@ Mirador and annotation will work as stand alone allowing users to enter manifest
 CMS: Digirati Manifest editor -> save json to system -> other modules can access json for manifests
     
 
-    
 
-### Possible Architectures
+## Possible Architecture
 
 ![Frame 1 (1)](https://user-images.githubusercontent.com/10541019/174935103-33ce8f3d-9b71-43ed-9f1a-3eadbe8e4db8.png)
 
