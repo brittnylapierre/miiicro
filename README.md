@@ -132,49 +132,11 @@ CMS: Digirati Manifest editor -> save json to system -> other modules can access
 
 ## Built using Microweber: Drag-and-Drop CMS
 
-
-### What is Microweber?  
-
-![admin panel](https://microweber.org/userfiles/media/microweber.org/dashboard-1_17.jpg "")
-
-
 Microweber is a Drag and Drop website builder and a powerful next generation CMS. It's based on the PHP Laravel Framework. You can use Microweber to make any kind of website, online store, and blog. The Drag and Drop technology allows you to build your website without any technical knowledge.
 
-The core idea of the software is to let you create your own website, online shop or blog. From this moment of creation, your journey towards success begins. Supporting you along the way will be different modules, customizations and features of the CMS. Many of them are specifically tailored for e-commerce enthusiasts and bloggers.
-
-The most important thing you need to know is that Microweber pairs the latest Drag & Drop technology, with a revolutionary Real-Time Text Writing & Editing feature. This pair of features delivers an improved user experience, easier and quicker content management, a visually appealing environment, and flexibility.
-
-
-### Core features of Microweber  
-
-
-#### Drag & Drop
-
-Microweber implements Drag & Drop technology. This means that users can manage their content and arrange elements with just a click of the mouse, dragging and dropping them across the screen. Drag & Drop applies to all types of content: images, text fields, videos, and the various modules and customization options you have as a user. The default template “Dream” comes with more than 75+ prepared layouts that you can use via drag and drop.
-
 ![Drag And Drop](https://microweber.com/cdn/2019_version/Drag_Drop_CMS_Microweber.gif "")
-
-
-
-#### Real Time Text Editing
-
-Live Edit view is the manifestation of the Real-Time Text Writing & Editing core feature of Microweber CMS. Live Edit view changes your website’s interface in real time.
-
-![E-commerce solution](https://sitestatic.microweber.com/cdn/gh_readme/homepage-2018-third-section.gif "")
-
-
-
-#### Powerful Admin Panel
-
-You can add dynamic pages, posts, and products. All of these can be organized in custom categories in order to achieve a better navigation and showcase of a website's content. New pages can be created using different layouts. In addition, all pages, posts and products come with a number of preset layouts and modules to get users started. These modules can be changed and you can add your own custom set of modules in order to create the most suitable content for your needs.
-
-
-
-
-#### E-commerce Solution
-
-The main focus of Microweber CMS is E-commerce. A rising number of people have grown fond of the idea of online entrepreneurship and we aspire to cover their needs. The software has some built-in features that will help online shop founders see their business grow and excel.
-
+    
+[Learn More](https://microweber.org/academy)
 
 
 ###  Requirements  
