@@ -135,7 +135,8 @@ CMS: Digirati Manifest editor -> save json to system -> other modules can access
 
 
 ## Possible Architecture
-![Frame 1 (7)](https://user-images.githubusercontent.com/10541019/175782074-e4b5cb9c-76d7-4339-8d7c-f627cecb3ee6.png)
+![Frame 1 (8)](https://user-images.githubusercontent.com/10541019/175782111-e1b0af8d-08d0-486d-b14b-66b07cc46fef.png)
+
 
 
 
