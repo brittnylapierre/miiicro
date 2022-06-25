@@ -11,7 +11,7 @@ Todo list:
 - [ ] IIIF Collection Preview Module
 - [ ] IIIF Metadata Viewer Module
 - [ ] IIIF Citation Generation Module
-- [ ] IIIF Mirador Module
+- [ ] IIIF Mirador Workstation Module
 - [ ] IIIF Clover Viewer Module
 - [ ] IIIF Annotation Studio Module
 - [ ] IIIF Manifest JSON CMS
