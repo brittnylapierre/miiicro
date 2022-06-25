@@ -134,10 +134,9 @@ CMS: Digirati Manifest editor -> save json to system -> other modules can access
     
 
 
-## Possible Architecture
-![Frame 1 (8)](https://user-images.githubusercontent.com/10541019/175782111-e1b0af8d-08d0-486d-b14b-66b07cc46fef.png)
+## Possible Architecture(s)
 
-
+![Frame 1 (10)](https://user-images.githubusercontent.com/10541019/175782197-17e73917-a391-457d-bdb5-ecfc52333d86.png)
 
 
 ## Built using Microweber: Drag-and-Drop CMS
