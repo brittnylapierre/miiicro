@@ -51,7 +51,8 @@ Example response: https://demo.projectblacklight.org/catalog.atom?q=urdu&content
 Options: 
 
 IIIF Presentation API url = ""
-Get id from: query string 'manifesr_id' param OR enter manually (shows input)
+    
+Get id from: query string 'manifest_id' param OR enter manually (shows input)
 
 Description:
     
@@ -68,10 +69,14 @@ Note: clover viewer to use same config
 Options: 
 
 IIIF Presentation API url = ""
+    
 Enter collection ids manually
+    
 Layout: Grid, Slider, Pagination
+    
 Paginate?
     # per page
+    
 Collection page - select one from existing pages that the search results will link to, with the collection id in the query string
 
     
@@ -79,16 +84,22 @@ Description:
     
 Will draw the manually entered collections in the selected layout
     
+    
 ## IIIF Collection Preview Module
 
 Options: 
 
 IIIF Presentation API url = ""
-Collection ID
-Enter manifest ids manually
+    
+Enter Collection ID manually
+    
+Enter manifest ids for manifests to show manually
+    
 Layout: Grid, Slider, Pagination
+    
 Paginate?
     # per page
+    
 Manifest page - select one from existing pages that the search results will link to, with the manifest id in the query string
 
     
@@ -102,9 +113,12 @@ Will draw the manually entered manifests from the collection in the selected lay
 Options: 
 
 IIIF Presentation API url = ""
+    
 item type
-item id
-included feilds = metadata keynames to include - all OR list
+    
+Get id from: query string 'item_id' param OR enter manually (shows input)
+    
+included fields = metadata keynames to include - all OR list
 
     
 Description:
@@ -117,13 +131,16 @@ Will draw the metadata feilds for the item in a table
 Options: 
 
 IIIF Presentation API url = ""
+    
 item type
-item id
+    
+Get id from: query string 'item_id' param OR enter manually (shows input)
 
     
 Description:
     
 Will draw citations in common citation formats for the item
+    
 
 ## Others    
 Clover viewer works exactly like universal viewer module
