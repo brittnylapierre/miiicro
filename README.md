@@ -36,11 +36,12 @@ Forwards to results page with qs param set to search input value
 
 Options: 
 
-Blacklight url = http://demo.projectblacklight.org
+Blacklight url 
 
 Description:
 
 On load, javascript sends blacklight api request: <Blacklight url>/catalog.atom?q=<qs search input param from redirect>&content_format=oai_dc_xml
+Example response: https://demo.projectblacklight.org/catalog.atom?q=urdu&content_format=oai_dc_xml
     
 
 ## IIIF Universal Viewer Module
