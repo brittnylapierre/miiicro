@@ -5,7 +5,7 @@ Currently under development.
 An instance of the [Microweber](https://github.com/microweber/microweber) drag and drop CMS that includes IIIF modules.
 
 Todo list:
-- [ ] IIIF Search Module
+- [ ] Blacklight Search Module
 - [ ] IIIF Universal Viewer Module
 - [ ] IIIF Collection Explorer Module
 - [ ] IIIF Collection Preview Module
