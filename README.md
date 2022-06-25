@@ -38,6 +38,8 @@ Options:
 
 Blacklight url 
 
+Manifest page - select one from existing pages that the search results will link to, with the manifest id in the query string
+
 Description:
 
 On load, javascript sends blacklight api request: <Blacklight url>/catalog.atom?q=<qs search input param from redirect>&content_format=oai_dc_xml
@@ -70,6 +72,7 @@ Enter collection ids manually
 Layout: Grid, Slider, Pagination
 Paginate?
     # per page
+Collection page - select one from existing pages that the search results will link to, with the collection id in the query string
 
     
 Description:
@@ -86,6 +89,7 @@ Enter manifest ids manually
 Layout: Grid, Slider, Pagination
 Paginate?
     # per page
+Manifest page - select one from existing pages that the search results will link to, with the manifest id in the query string
 
     
 Description:
