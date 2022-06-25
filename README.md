@@ -5,7 +5,8 @@ Currently under development.
 An instance of the [Microweber](https://github.com/microweber/microweber) drag and drop CMS that includes IIIF modules.
 
 Todo list:
-- [ ] Blacklight Search Module
+- [ ] Blacklight Search Bar Module
+- [ ] Blacklight Search Results Module
 - [ ] IIIF Universal Viewer Module
 - [ ] IIIF Collection Explorer Module
 - [ ] IIIF Collection Preview Module
@@ -17,6 +18,110 @@ Todo list:
 - [ ] IIIF Manifest JSON CMS/IIIF Manifest Editor Admin Module - add option to select from/search in this list to previous modules. 
 - [ ] iframe module
 
+
+## Blacklight Search Bar Module
+
+
+Options: 
+
+Results page = one of the pages from your site - must have search results module 
+
+Description:
+
+Forwards to results page with qs param set to search input value
+
+
+
+## Blacklight Search Results Module
+
+Options: 
+
+Blacklight url = http://demo.projectblacklight.org
+
+Description:
+
+On load, javascript sends blacklight api request: <Blacklight url>/catalog.atom?q=<qs search input param from redirect>&content_format=oai_dc_xml
+    
+
+## IIIF Universal Viewer Module
+
+Options: 
+
+IIIF Presentation API url = ""
+Get id from: query string 'manifesr_id' param OR enter manually (shows input)
+
+Description:
+On load
+<script>
+    universal viewer inititalization (pho print <Presentation API URL>/<manifest id>/manifest
+</script>
+
+Note: clover viewer to use same config
+
+
+## IIIF Collection Explorer Module
+
+Options: 
+
+IIIF Presentation API url = ""
+Enter collection ids manually
+Layout: Grid, Slider, Pagination
+Paginate?
+    # per page
+
+    
+Description:
+Will draw the manually entered collections in the selected layout
+    
+## IIIF Collection Preview Module
+
+Options: 
+
+IIIF Presentation API url = ""
+Collection ID
+Enter manifest ids manually
+Layout: Grid, Slider, Pagination
+Paginate?
+    # per page
+
+    
+Description:
+Will draw the manually entered manifests from the collection in the selected layout
+    
+
+## IIIF Metadata Module
+
+Options: 
+
+IIIF Presentation API url = ""
+item type
+item id
+included feilds = metadata keynames to include - all OR list
+
+    
+Description:
+Will draw the metadata feilds for the item in a table
+  
+
+## IIIF Citation Module
+
+Options: 
+
+IIIF Presentation API url = ""
+item type
+item id
+
+    
+Description:
+Will draw citations in common citation formats for the item
+
+## Others    
+Clover viewer works exactly like universal viewer module
+Mirador and annotation will work as stand alone allowing users to enter manifest urls
+CMS: Digirati Manifest editor -> save json to system -> other modules can access json for manifests
+    
+
+    
 
 ### Possible Architectures
 
