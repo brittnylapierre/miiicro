@@ -14,8 +14,7 @@ Todo list:
 - [ ] IIIF Mirador Workstation Module
 - [ ] IIIF Clover Viewer Module
 - [ ] IIIF Annotation Studio Module
-- [ ] IIIF Manifest JSON CMS
-- [ ] IIIF Manifest Editor Admin Module
+- [ ] IIIF Manifest JSON CMS/IIIF Manifest Editor Admin Module - add option to select from/search in this list to previous modules. 
 - [ ] iframe module
 
 
