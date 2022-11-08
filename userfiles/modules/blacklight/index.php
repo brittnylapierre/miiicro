@@ -29,13 +29,13 @@
     if( array_key_exists('response', $json) &&  array_key_exists('docs', $json['response'] )) {
       foreach ($json['response']['docs'] as $value) {
 
-        if( array_key_exists ( 'title', $value ) ) {
+        if( array_key_exists ( 'title_extended', $value ) ) {
           
           if( array_key_exists ('drs_file_id', $value) && 
-          array_key_exists ('delivery_service', $value)) {
-            print '<a href="/iiif?id=' . $value['delivery_service'] . ':' . $value['drs_file_id'] . '"><h4>' . $value['title'] . '</h4></a>';
+          array_key_exists ('delivery_service', $value) && strlen($value['drs_file_id']) > 0 ) {
+            print '<a href="/iiif?id=' . $value['delivery_service'] . ':' . $value['drs_file_id'] . '"><h4>' . $value['title_extended'] . '</h4></a>';
           } else {
-            print '<h4>' . $value['title'] . '</h4>';
+            print '<h4>' . $value['title_extended'] . '</h4>';
           }
           
             
