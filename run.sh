@@ -2,6 +2,9 @@ docker build -t micro-image:1.0 .
 chmod 777 -R .
 docker run -v /home/brittny/micro_access/userfiles:/var/www/html/userfiles --name micro-access -d -p 80:80 micro-image:3.0
 
+docker stop micro-access
+docker start micro-access
+
 enter this for the blacklight url
 https://digitalcollections.library.harvard.edu
 
