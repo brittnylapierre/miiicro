@@ -6,9 +6,19 @@
         src="https://cdn.jsdelivr.net/npm/universalviewer@4.0.0/dist/umd/UV.js"
       ></script>
 
-      <h3><?php print $params['document_id'];?></h3>
-      <h4><?php print get_option('iiif_url', $params['id']) . "/" . $params['document_id'];?></h4>
-      <div class="uv" id="uv"></div>
+      <!--h3><?php print $params['document_id'];?></h3>
+      <h4><?php print get_option('iiif_url', $params['id']) . "/" . $params['document_id'];?></h4-->
+
+      <div class="container px-4 py-5 element" id="icon-grid">
+  
+        <div class="row row-cols-1 py-5">
+            <div class="col d-flex align-items-center">
+              <div class="uv" id="uv"></div>
+            </div>
+        </div>
+    </div>
+
+      
       <script>
         
         /**get_option('iiif_url', $params['id']) . "/" . $params['document_id'];?>/manifest"*/
