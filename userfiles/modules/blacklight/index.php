@@ -34,7 +34,7 @@
               array_key_exists ( 'attributes', $value['attributes']['title_tsim'] ) &&
               array_key_exists ( 'value', $value['attributes']['title_tsim']['attributes'] )
             ){
-              print '<h4>' . $value['attributes']['title_tsim']['attributes']['value'] . '</h4>';
+              print '<a href="/iiif?id=b18035723"><h4>' . $value['attributes']['title_tsim']['attributes']['value'] . '</h4></a>';
             }
         }
 
