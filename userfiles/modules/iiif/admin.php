@@ -1,4 +1,4 @@
-<h1>Admin part my module!</h1>
+<h1>Admin part my module</h1>
 
 <label class="mw-ui-label">
   Set url

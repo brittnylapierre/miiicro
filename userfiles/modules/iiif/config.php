@@ -1,6 +1,6 @@
 <?php
 $config = array();
-$config['name'] = "Project Blacklight Module";
+$config['name'] = "IIIF Viewer Module";
 $config['description'] = "The best module ever!";
 $config['author'] = "Brittny Lapierre";
 $config['ui'] = true; //you can drop this module in live edit
