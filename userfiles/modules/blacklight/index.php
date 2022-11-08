@@ -1,7 +1,7 @@
 <form action="search.php" method="GET">
   <div class="input-group mb-3">
     <input type="text" name="keywords" class="form-control" placeholder="" aria-label="Search the harvard repository" aria-describedby="button-addon2">
-    <button class="btn btn-outline-secondary" type="submit" value="Search" id="button-addon2">Search</button>
+    <button class="btn btn-primary" type="submit" value="Search" id="button-addon2">Search</button>
   </div>
 </form>
 

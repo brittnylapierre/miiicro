@@ -13,6 +13,8 @@ https://iiif.lib.harvard.edu/manifests
 
 localhost
 
+https://digitalcollections.library.harvard.edu/catalog/990067963950203941.json
+
 
 sudo add-apt-repository ppa:ondrej/php
 sudo apt install php8.1
