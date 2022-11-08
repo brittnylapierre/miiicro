@@ -26,7 +26,30 @@
     $result = curl_exec($request);
     $json = json_decode($result, true);
 
-    if( array_key_exists('data', $json) ) {
+    if( array_key_exists('response', $json) &&  array_key_exists('docs', $json['response'] )) {
+      foreach ($json['response']['docs'] as $value) {
+
+        if( array_key_exists ( 'title', $value ) ) {
+          
+          if( array_key_exists ('drs_file_id', $value) && 
+          array_key_exists ('delivery_service', $value)) {
+            print '<a href="/iiif?id=' . $value['delivery_service'] . ':' . $value['drs_file_id'] . '"><h4>' . $value['title'] . '</h4></a>';
+          } else {
+            print '<h4>' . $value['title'] . '</h4>';
+          }
+          
+            
+        }
+
+
+        if( array_key_exists ( 'type', $value ) ) {
+          print '<h5>' . $value['type'] . '</h5>';
+        }
+
+      }
+    }
+    
+    /*if( array_key_exists('data', $json) ) {
       foreach ($json['data'] as $value) {
 
         if( array_key_exists ( 'attributes', $value ) ) {
@@ -44,7 +67,7 @@
         }
 
       }
-    }
+    }*/
     curl_close($request);
   } catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";

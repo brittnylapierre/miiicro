@@ -1,0 +1,116 @@
+{
+    "response": {
+        "docs": [
+            {
+                "identifier": "990067963950203941",
+                "title": "An  historical survey of the County of Cornwall, v.2 (1820) only. to which is added, A complete heraldry of the same, with numerous engravings",
+                "title_extended": "An  historical survey of the County of Cornwall, v.2 (1820) only. to which is added, A complete heraldry of the same, with numerous engravings<br/><br/><span class=\"alternative-title\"><strong>Alternative Title</strong>: Heraldry of Cornwall, v.2 (1820) only</span><br/><br/><span class=\"alternative-title\"><strong>Alternative Title</strong>: Historical and topographical survey of the county of Cornwall, v.2 (1820) only</span>",
+                "abstract": "Book 1. Volume 1 -- Book 2. Heraldry -- Book 3. Topography of Cornwall.",
+                "resource_type": [],
+                "digital_format": "Books and documents",
+                "repository": "<a href=\"/catalog?f%5BphysicalLocation%5D%5B%5D=Widener+Library%2C+Harvard+University\" >Widener Library, Harvard University</a>",
+                "genre": "<a href=\"/catalog?f%5Bgenre%5D%5B%5D=bibliography\" >bibliography</a>",
+                "publisher": "<a href=\"/catalog?f%5Bpublisher%5D%5B%5D=Printed+and+published+by+J.+Congdon\" >Printed and published by J. Congdon</a><br/><a href=\"/catalog?f%5Bpublisher%5D%5B%5D=Longman%2C+Hurst%2C+Rees%2C+Orme%2C+and+Brown%2C+...+and+by+R.+Ackerman+%5Bsic%5D\" >Longman, Hurst, Rees, Orme, and Brown, ... and by R. Ackerman [sic]</a>",
+                "edition": "",
+                "culture": "",
+                "style": "",
+                "owner_code": "FHCL.COLL",
+                "owner_display": "Collection Development Department. Widener Library. HCL",
+                "place": "",
+                "description": "<strong>Extent</strong>: 2 v. in 3 : ill., coats of arms, map, ports. ; 30 cm.<br/>print",
+                "name": "Gilbert, Charles Sandoe, 1760-1831",
+                "language": "<a href=\"/catalog?f%5Blanguage%5D%5B%5D=English\" >English</a>",
+                "origin": "<a href=\"/catalog?f%5BoriginPlace%5D%5B%5D=England\" >England</a><br/><a href=\"/catalog?f%5BoriginPlace%5D%5B%5D=Plymouth-Dock\" >Plymouth-Dock</a><br/><a href=\"/catalog?f%5BoriginPlace%5D%5B%5D=London\" >London</a>",
+                "date": "1817-1820",
+                "permalink": "https://id.lib.harvard.edu/digital_collections/990067963950203941",
+                "notes": "\"In two volumes.\"<br/>\"Directions to the binder\", p. [17-18] at end of book 3, explain the unusual \"structure\" of the work, recommending that v. 1 and 2 be bound in three books.<br/>Vol. 1 continues into book 2 (i.e. book 2 contains p. 409-592 of vol. 1) and vol. 2 extends over books 2 and 3.<br/>Book 1: [2], viii, [2], 408 p., [12] leaves of plates (1 folded) -- Book 2: [4], 409-592, 372 p., [1], 25 p. of plates -- Book 3: [2], [373]-962, [20] p., [40] leaves of plates.<br/>Vol. 1 (book 1) with added engraved title-leaf (counted as plate).<br/>Errata to vol. 1-2 at end of book 3.<br/>Includes bibliographical references. Indexes to v. 1 and 2 printed at end of v. 2 in book 3.<br/>Electronic reproduction. v.2 (1820) Cambridge, Mass. : Harvard College Library Digital Imaging Group, 2011. (Harvard College Library preservation digitization program). Copy digitized: Widener Library: Br 3802.7. Vol. 2 bound in two vols.<br/><strong>Attribution</strong>: by C.S. Gilbert.",
+                "series": "<a href=\"/catalog?f%5BseriesTitle%5D%5B%5D=Harvard+College+Library+preservation+digitization+program+\" >Harvard College Library preservation digitization program </a>",
+                "subjects": "<a href=\"/catalog?f%5Bsubject%5D%5B%5D=Heraldry--England--Cornwall+%28County%29\" >Heraldry--England--Cornwall (County)</a><br/><a href=\"/catalog?f%5Bsubject%5D%5B%5D=Cornwall+%28England+%3A+County%29--History\" >Cornwall (England : County)--History</a>",
+                "preview": "https://ids.lib.harvard.edu/ids/view/31294517?width=150&height=150&usethumb=y",
+                "raw_object": "https://pds.lib.harvard.edu/pds/view/31294515",
+                "funding": "",
+                "hollis_links": [
+                    {
+                        "url": "https://id.lib.harvard.edu/alma/990067963950203941/catalog",
+                        "link_text": "HOLLIS Record",
+                        "label": ""
+                    }
+                ],
+                "hollis_image_links": [],
+                "finding_aid_links": [],
+                "digital_collections_links": [],
+                "additional_digital_items": "",
+                "drs_file_id": "31294515",
+                "delivery_service": "pds",
+                "id": "990067963950203941"
+            }
+        ],
+        "facets": [
+            {
+                "name": "originDate",
+                "items": [
+                    {
+                        "value": "1817",
+                        "hits": 1,
+                        "label": "1817"
+                    },
+                    {
+                        "value": "1817-1820",
+                        "hits": 1,
+                        "label": "1817-1820"
+                    },
+                    {
+                        "value": "1820",
+                        "hits": 1,
+                        "label": "1820"
+                    }
+                ],
+                "label": "Date Range"
+            },
+            {
+                "name": "resourceType",
+                "items": [
+                    {
+                        "value": "text",
+                        "hits": 1,
+                        "label": "text"
+                    }
+                ],
+                "label": "Type"
+            },
+            {
+                "name": "language",
+                "items": [
+                    {
+                        "value": "English",
+                        "hits": 1,
+                        "label": "English"
+                    }
+                ],
+                "label": "Languages"
+            },
+            {
+                "name": "repository",
+                "items": [
+                    {
+                        "value": "Widener",
+                        "hits": 1,
+                        "label": "Widener"
+                    }
+                ],
+                "label": "Repository"
+            }
+        ],
+        "pages": {
+            "current_page": 1,
+            "next_page": null,
+            "prev_page": null,
+            "total_pages": 1,
+            "limit_value": 12,
+            "offset_value": 0,
+            "total_count": 1,
+            "first_page?": true,
+            "last_page?": true
+        }
+    }
+}

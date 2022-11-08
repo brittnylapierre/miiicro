@@ -11,8 +11,10 @@
   <h4><?php print get_option('iiif_url', $params['id']) . "/" . $params['document_id'];?></h4>
   <div class="uv" id="uv"></div>
   <script>
+    
+    /**get_option('iiif_url', $params['id']) . "/" . $params['document_id'];?>/manifest"*/
     const data = {
-      manifest: "<?php print get_option('iiif_url', $params['id']) . "/" . $params['document_id'];?>/manifest",
+      manifest: "<?php print get_option('iiif_url', $params['id']) . '/' . $params['document_id']?>",
       embedded: true // needed for codesandbox frame
     };
 
