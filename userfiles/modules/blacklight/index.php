@@ -33,7 +33,7 @@
           
           if( array_key_exists ('drs_file_id', $value) && 
           array_key_exists ('delivery_service', $value) && strlen($value['drs_file_id']) > 0 ) {
-            print '<a href="/iiif?id=' . $value['delivery_service'] . ':' . $value['drs_file_id'] . '"><h4>' . $value['title_extended'] . '</h4></a>';
+            print '<a href="/iiif?id=' . ($value['delivery_service'] == "irs" ? "irs" : "drs") . ':' . $value['drs_file_id'] . '"><h4>' . $value['title_extended'] . '</h4></a>';
           } else {
             print '<h4>' . $value['title_extended'] . '</h4>';
           }
