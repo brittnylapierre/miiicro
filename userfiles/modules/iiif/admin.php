@@ -3,8 +3,8 @@
 <label class="mw-ui-label">
   Set url
   <input
-      name="bl_url"
+      name="iiif_url"
       class="mw_option_field"
       type="text"
-      value="<?php print get_option('bl_url', $params['id']); ?>" />
+      value="<?php print get_option('iiif_url', $params['id']); ?>" />
 </label>

@@ -4,20 +4,25 @@ Currently under development.
 
 An instance of the [Microweber](https://github.com/microweber/microweber) drag and drop CMS that includes IIIF modules.
 
+# Miiicro
+
+Currently under development.
+
+An instance of the [Microweber](https://github.com/microweber/microweber) drag and drop CMS that includes IIIF modules.
+
 Todo list:
-- [ ] Blacklight Search Bar Module
-- [ ] Blacklight Search Results Module
+- [ ] Blacklight Search Module
 - [ ] IIIF Universal Viewer Module
 - [ ] IIIF Collection Explorer Module
 - [ ] IIIF Collection Preview Module
 - [ ] IIIF Metadata Viewer Module
 - [ ] IIIF Citation Generation Module
-- [ ] IIIF Mirador Workstation Module
-- [ ] IIIF Clover Viewer Module
-- [ ] IIIF Annotation Studio Module
-- [ ] IIIF Manifest JSON CMS/IIIF Manifest Editor Admin Module - add option to select from/search in this list to previous modules. 
-- [ ] iframe module
 
+Other Ideas
+- IIIF Digirati Editor Module
+- IIIF Mirador Workstation Module
+- IIIF Clover Viewer Module
+- IIIF Annotation Studio Module
 
 ## Blacklight Search Bar Module
 

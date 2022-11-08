@@ -4,7 +4,7 @@
   <div class="uv" id="uv"></div>
   <script>
     const data = {
-      manifest: "https://wellcomelibrary.org/iiif/<?php print $params['document_id'];?>/manifest",
+      manifest: "<?php print get_option('iiif_url', $params['id']) . $params['document_id'];?>/manifest",
       embedded: true // needed for codesandbox frame
     };
 
