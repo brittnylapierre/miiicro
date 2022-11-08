@@ -1,8 +1,11 @@
-<h1>search bar!</h1>
 <form action="search.php" method="GET">
-	<input type="text" name="keywords" />
-	<input type="submit" value="Search" />
+  <div class="input-group mb-3">
+    <input type="text" name="keywords" class="form-control" placeholder="" aria-label="Search the harvard repository" aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary" type="submit" value="Search" id="button-addon2">Search</button>
+  </div>
 </form>
+
+
 
 
 
