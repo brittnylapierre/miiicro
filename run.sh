@@ -2,8 +2,12 @@ docker build -t micro-image:1.0 .
 chmod 777 -R .
 docker run -v /home/brittny/micro_access/userfiles:/var/www/html/userfiles --name micro-access -d -p 80:80 micro-image:3.0
 
-https://digitalcollections.library.harvard.edu/catalog.json?utf8=%E2%9C%93&search_field=all_fields&q=
-https://iiif.lib.harvard.edu/manifests/drs:31294515
+enter this for the blacklight url
+https://digitalcollections.library.harvard.edu
+
+enter this for the IIIF url
+https://iiif.lib.harvard.edu/manifests
+
 
 /home/tdr/CIHM-Meta
 
